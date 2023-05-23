@@ -15,3 +15,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     --mdc-snackbar-container-color: black;
     --mdc-snackbar-supporting-text-color:#1aa7ec;
 }
+
+.mat-header-cell {
+    vertical-align: top;
+    font-size: smaller;
+  }

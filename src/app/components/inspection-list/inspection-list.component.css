@@ -1,7 +1,3 @@
-body {
-  margin: 0;
-}
-
 div {
     width: 98%;
     align-items: center;
@@ -16,7 +12,9 @@ div {
   top: 0;
   left: 0;
   z-index: 2;
-  width: 100% !important;
+  width: 98% !important;
+  align-items: center;    
+  left: 1%;
 }
 img {
   width: 4rem;
@@ -29,44 +27,41 @@ img {
   display: inline;
 }
 .th-row,
-.inspection-table td {
+.inspection-td {
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
-
 .th-row {
   margin-bottom: 0;
-  padding: 70px 10px 0px 10px;
+  padding: 60px 10px 0px 10px;
   background-color: #f5f5f5;
   width: 100%;
   font-size: 1rem;
   font-weight: 400;
 }
-
 .inspection-td {
   padding: 20px 40px 20px 20px;
   font-size: 1rem;
 }
-
 .copy-button {
   background-color: #f78e2b;
   color: white !important;
-  border: none;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  border: none;  
+  text-align: center;  
   font-size: 12px;
   cursor: pointer;
   border-radius: 5px;
   left: 30px;
 }
 .copy-button:hover {
-  background-color: #1aa7ec;
+   background-color: #575F64;  
 }
 .copy-button:focus {
   outline: none;
+  background-color: #00b300 ;
 }
- mat-header-row > mat-header-cell {
-    font-size: .9rem;
- }
+ @media only screen and (max-width: 768px) {
+    .copy-button {        
+        left: -5px;
+      }      
+  }
