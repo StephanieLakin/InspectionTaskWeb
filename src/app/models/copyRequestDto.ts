@@ -1,4 +1,4 @@
-export interface CopyRequestDto  {
-    CopyInspectionId: number;
-    AssignedToPersonId: number ;
-  }
+export interface CopyRequestDto {
+  CopyInspectionId: number;
+  AssignedToPersonId: number;
+}

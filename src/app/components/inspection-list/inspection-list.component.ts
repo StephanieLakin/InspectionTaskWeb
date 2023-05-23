@@ -12,6 +12,9 @@ import { InspectionService } from '../../services/inspectionService';
 })
 export class InspectionListComponent implements OnInit {
   inspections: Inspection[] = [];
+  copyRequests: CopyRequestDto[] = [];
+  selectedCopyRequest: CopyRequestDto | null = null;
+  showCopyRequestCard = false;
 
   constructor(
     private inspectionService: InspectionService,
@@ -39,6 +42,8 @@ export class InspectionListComponent implements OnInit {
         }
       );
   }
+
+ 
   // Copy an inspection & show error if issue occurs
   copyInspection(inspection: Inspection): void {
     const copyRequest: CopyRequestDto = {
@@ -49,6 +54,8 @@ export class InspectionListComponent implements OnInit {
       .subscribe(
         () => {
           this.showSuccessSnackBar();
+          this.selectedCopyRequest = copyRequest; // Assign the selected copy request
+          this.showCopyRequestCard = true; // Show the copy request card
         },
         error => {
           console.error('Failed to copy inspection:', error);
@@ -78,6 +85,20 @@ export class InspectionListComponent implements OnInit {
 // Handles error while obtaining inspections
   handleError(): void {
     this.showFailureSnackBar()}
+
+    getRequests(): void {
+      this.inspectionService.getRequests()
+        .subscribe(
+          (copyRequest: CopyRequestDto[]) => {
+            this.copyRequests = copyRequest;
+          },     
+          error => {
+            console.error('Failed to obtain requests:', error);
+            this.handleError();
+          }        
+        );
+        console.log(this.copyRequests);
+    }
   }
 
   

@@ -60,6 +60,7 @@ img {
   outline: none;
   background-color: #00b300 ;
 }
+
  @media only screen and (max-width: 768px) {
     .copy-button {        
         left: -5px;

@@ -1,4 +1,4 @@
-<div mat-elevation-z8>
+<div class="page-container" mat-elevation-z8>
 <mat-toolbar class="custom-toolbar">
  <img src="../assets/InspLogo.png" /> 
   <span>Inspection List</span>
@@ -29,4 +29,19 @@
   <mat-header-row *matHeaderRowDef="['name', 'location', 'assignedTo', 'copyRequest']" class="th-row"></mat-header-row>
   <mat-row *matRowDef="let row; columns: ['name', 'location', 'assignedTo', 'copyRequest']"></mat-row>
 </mat-table>
+<!-- requests -->
+<mat-card class="copy-request-card" *ngIf="showCopyRequestCard">
+  <mat-card-header>
+    <mat-card-title>Copy Request Details:</mat-card-title>
+  </mat-card-header>
+  <!-- Display copy request details -->  
+  <mat-card-content>      
+    <p>Copy Inspection ID: {{ selectedCopyRequest?.CopyInspectionId }}</p>
+    <p>Assigned To Person ID: {{ selectedCopyRequest?.AssignedToPersonId }}</p>
+  </mat-card-content>
+</mat-card>
 </div>
+
+
+
+  

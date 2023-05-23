@@ -32,6 +32,10 @@ export class InspectionService {
       );
   }
 
+  getRequests(): Observable<CopyRequestDto[]> {
+    return this.httpClient.get<CopyRequestDto[]>(`${this.API_URL}/${this.url}/Requests`);
+  }
+
   handleError(): void {
     console.error('An error occurred during API call.');
   }
